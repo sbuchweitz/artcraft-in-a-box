@@ -73,6 +73,10 @@ Serving details, following each app's `HOSTING.md`:
 | [`build`](.github/workflows/build.yml) | push to `main`, `v*` tags, PRs, manual | lint + unit tests → build → [smoke test](tests/smoke.sh) → push `linux/amd64` + `linux/arm64` to GHCR (not for PRs) |
 | [`update-apps`](.github/workflows/update-apps.yml) | daily 04:23 UTC, manual | pins `apps.json` to each repo's latest release, commits the bump to `main`, starts `build` |
 
+A new image is published only when something changed. If no app has a new release, `update-apps`
+commits nothing and no build runs. Docs-only pushes (`*.md`, `docs/`, `LICENSE`) don't rebuild
+either.
+
 Image tags: `latest` (main), `sha-<commit>`, and `X.Y.Z` / `X.Y` for `vX.Y.Z` git tags. Builds
 carry SBOM and provenance attestations.
 
@@ -99,7 +103,10 @@ To add an app, append an entry to `apps.json` and put a square icon in `site/ass
 release must ship a `<id>-web-<version>.zip` whose `index.html` uses relative URLs. Run
 `make update` to pin it to its latest release.
 
-## Credits
+## License
+
+This repository (build tooling, nginx config, landing page) is licensed under the
+[Apache License 2.0](LICENSE).
 
 The apps are made by the [ArtCraft](https://getartcraft.com) project
 ([github.com/storytold](https://github.com/storytold)) and are dual-licensed Apache-2.0 / MIT. Their
