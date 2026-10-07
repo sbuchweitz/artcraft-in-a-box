@@ -1,0 +1,103 @@
+{
+  "apps": [
+    {
+      "id": "photocraft",
+      "name": "PhotoCraft",
+      "category": "Image editor",
+      "description": "The open-source image editor you already know how to use.",
+      "status": "Early alpha",
+      "repo": "storytold/photocraft",
+      "tag": "v0.3.0",
+      "version": "0.3.0",
+      "asset": "photocraft-web-0.3.0.zip",
+      "sha256": "1825b2beb2b84331124f6cb78e5eb6eb9584612e8ad6a4e817b7f27cb3f93d06",
+      "icon": "assets/icons/photocraft.webp",
+      "accent": "#2f7bf5"
+    },
+    {
+      "id": "vectorcraft",
+      "name": "VectorCraft",
+      "category": "Vector illustration",
+      "description": "Fast, open-source vector illustration, reimagined in pure Rust.",
+      "status": "In development",
+      "repo": "storytold/vectorcraft",
+      "tag": "v0.4.0",
+      "version": "0.4.0",
+      "asset": "vectorcraft-web-0.4.0.zip",
+      "sha256": "fa4349aa78ef545a9e4d29e6b9468e419b5231fa4bb5c379dd5f6ad50cdab3de",
+      "icon": "assets/icons/vectorcraft.webp",
+      "accent": "#e7573e"
+    },
+    {
+      "id": "filmcraft",
+      "name": "FilmCraft",
+      "category": "Video editor",
+      "description": "Professional, open-source video editing, rebuilt from scratch in Rust.",
+      "status": "In development",
+      "repo": "storytold/filmcraft",
+      "tag": "v0.2.1",
+      "version": "0.2.1",
+      "asset": "filmcraft-web-0.2.1.zip",
+      "sha256": "f496c41f65e3f38b32b05b92c27940c5f464b442573b617e69923df0f085005c",
+      "icon": "assets/icons/filmcraft.webp",
+      "accent": "#8a5cf6"
+    },
+    {
+      "id": "lightcraft",
+      "name": "LightCraft",
+      "category": "Photo library & raw developer",
+      "description": "An open-source photo library and raw developer that runs on your machine.",
+      "status": "In development",
+      "repo": "storytold/lightcraft",
+      "tag": "v0.2.1",
+      "version": "0.2.1",
+      "asset": "lightcraft-web-0.2.1.zip",
+      "sha256": "5b64a944583330e38e36d879984fd71d02efbe68a2d354e6f5211819eee5a8a5",
+      "icon": "assets/icons/lightcraft.webp",
+      "accent": "#f3a617",
+      "note": "Keeps its library in browser storage. Keep your originals elsewhere and use File > Back Up Library."
+    },
+    {
+      "id": "printcraft",
+      "name": "PrintCraft",
+      "category": "PDF workbench",
+      "description": "The open-source PDF workbench: read, organize, combine, split and secure.",
+      "status": "Early alpha",
+      "repo": "storytold/pdfcraft",
+      "tag": "v0.2.1",
+      "version": "0.2.1",
+      "asset": "printcraft-web-0.2.1.zip",
+      "sha256": "47cda2075ee79dbe8729b630f3bc559e6dd1bb37834ba5c592bcce50309a0a7f",
+      "icon": "assets/icons/printcraft.webp",
+      "accent": "#11a58a"
+    },
+    {
+      "id": "effectcraft",
+      "name": "EffectCraft",
+      "category": "Motion graphics & VFX",
+      "description": "Open-source motion graphics and visual effects, built in pure Rust.",
+      "status": "In development",
+      "repo": "storytold/effectcraft",
+      "tag": "v0.4.0",
+      "version": "0.4.0",
+      "asset": "effectcraft-web-0.4.0.zip",
+      "sha256": "68f781094d119ab6428d0d4d50bd8718b8226916c8274345ac268562848ecccf",
+      "icon": "assets/icons/effectcraft.webp",
+      "accent": "#e03690"
+    },
+    {
+      "id": "designcraft",
+      "name": "DesignCraft",
+      "category": "Page layout & publishing",
+      "description": "Open-source page layout and publishing, rebuilt in pure Rust.",
+      "status": "In development",
+      "repo": "storytold/designcraft",
+      "tag": "v0.2.1",
+      "version": "0.2.1",
+      "asset": "designcraft-web-0.2.1.zip",
+      "sha256": "762df9c5fff781dfb221c0996d304325bf893a0bacd0da0d5b1b70597e3cdc62",
+      "icon": "assets/icons/designcraft.webp",
+      "accent": "#7ab51b"
+    }
+  ]
+}

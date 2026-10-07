@@ -1,0 +1,15 @@
+services:
+  artcraft:
+    image: ghcr.io/sbuchweitz/artcraft-in-a-box:latest
+    container_name: artcraft-in-a-box
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    # nginx only writes its pid and temp files, all under /tmp.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

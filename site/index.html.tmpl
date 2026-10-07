@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ArtCraft in a Box</title>
+  <meta name="description" content="Open-source creative apps from ArtCraft, self-hosted and running in your browser.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/accents.css">
+  <script src="assets/page.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <img class="logo" src="assets/logo.svg" alt="" width="56" height="47">
+    <div>
+      <h1>ArtCraft <em>in a Box</em></h1>
+      <p class="lede">Open-source creative apps, served from this box and running entirely in your browser. Files you open stay on your device.</p>
+    </div>
+  </header>
+  <p class="notice" id="insecure-notice" hidden>
+    <strong>This page isn't served over HTTPS.</strong> Without a secure context the apps fall back from WebGPU to WebGL2, the clipboard is unavailable, and LightCraft can't store its library. Put the box behind an HTTPS reverse proxy (or open it on localhost) for the full experience.
+  </p>
+  <main>
+    <ul class="grid">
+$tiles
+    </ul>
+  </main>
+  <footer>
+    <p>Source code: $sources</p>
+    <p>The apps are free and open source under Apache-2.0 or MIT; each app's folder carries its license files. More about them at <a href="https://getartcraft.com/apps">getartcraft.com/apps</a> · <a href="versions.json">versions.json</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+name: update-apps
+
+# Pins apps.json to the newest upstream releases, commits the bump to main and starts a build.
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-apps
+
+permissions:
+  contents: write  # push the apps.json bump
+  actions: write   # start the build workflow
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0  # lets the push rebase if main moved meanwhile
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      # Pushes made with GITHUB_TOKEN don't trigger `on: push`, so the build is started explicitly.
+      - name: Pin latest releases, commit and build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          message="$RUNNER_TEMP/commit-message.txt"
+          printf 'chore: bump app versions\n\n' > "$message"
+          PYTHONPATH=tools python -m artbox.update --manifest apps.json | tee -a "$message"
+          if git diff --quiet -- apps.json; then
+            echo "No updates."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -F "$message" -- apps.json
+          git push origin "HEAD:$BRANCH" || { git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH"; }
+          gh workflow run build.yml --ref "$BRANCH"

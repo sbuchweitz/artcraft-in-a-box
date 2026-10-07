@@ -1,0 +1,7 @@
+*
+!Dockerfile
+!apps.json
+!nginx/
+!site/
+!tools/
+**/__pycache__
